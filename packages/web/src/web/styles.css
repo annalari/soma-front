@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-teal-900: var(--teal-900);
+  --color-teal-700: var(--teal-700);
+  --color-teal-500: var(--teal-500);
+  --color-mint: var(--mint);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-clay: var(--clay);
+}
+
+/* soma palette — derived from the logótipo */
+:root {
+  --radius: 1.25rem;
+  --teal-900: #03444a;
+  --teal-700: #0b5a5f;
+  --teal-500: #1b6f73;
+  --mint: #94c0a4;
+  --cream: #f1ecdf;
+  --paper: #fbf9f4;
+  --clay: #c8694a;
+  --background: #fbf9f4;
+  --foreground: #13282a;
+  --card: #ffffff;
+  --card-foreground: #13282a;
+  --primary: #0b5a5f;
+  --primary-foreground: #fbf9f4;
+  --secondary: #f1ecdf;
+  --secondary-foreground: #13282a;
+  --muted: #f1ecdf;
+  --muted-foreground: #5e6e70;
+  --accent: #e9f1ec;
+  --accent-foreground: #03444a;
+  --destructive: #c8694a;
+  --border: #e3ded1;
+  --input: #e3ded1;
+  --ring: #1b6f73;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 120;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
